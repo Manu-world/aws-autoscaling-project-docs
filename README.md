@@ -16,6 +16,16 @@ We start by building everything manually through the AWS Console so you can see 
 
 ---
 
+## Architecture
+
+The infrastructure you will build across all three editions:
+
+![AWS Auto Scaling Architecture — ALB, Auto Scaling Group across two Availability Zones](./architecture.png)
+
+> **What this shows:** An internet-facing Application Load Balancer sitting in front of an Auto Scaling Group that spans two Availability Zones. Each EC2 instance is locked behind a security group that only accepts traffic from the ALB — never directly from the internet. On boot, each instance independently clones and starts the app via a user-data script.
+
+---
+
 ## The Mental Model: Think of it as a Restaurant
 
 Before touching the AWS Console, read this once. Every time you get confused about what a service does, come back here.
